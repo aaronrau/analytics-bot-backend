@@ -1,0 +1,31 @@
+{
+  "name": "analytics",
+  "version": "0.1.0",
+  "description": "analytics =============",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^1.4.2",
+    "express": "^4.16.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.11.2",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
+    "shortid": "^2.2.6"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "prod": "node server.js --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronrau/analytics-bot-backend"
+  },
+  "license": "MIT",
+  "author": "Aaron Rau",
+  "bugs": {
+    "url": "https://github.com/aaronrau/analytics-bot-backend/issues"
+  },
+  "engines": {
+    "node": "8.9.x"
+  }
+}
