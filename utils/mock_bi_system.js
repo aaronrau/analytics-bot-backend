@@ -5102,9 +5102,16 @@ module.exports = {
 			for(var i = 0; i < TODAY_DATA.length; i++)
 			{
 				var m = TODAY_DATA[i];
-				m.Date =  new Date();
-
-				MOCK_TODAY.push(m);
+				MOCK_TODAY.push({
+					Date:new Date(),
+					BotChannel:m.BotChannel,
+					Category:m.Category,
+					NumMessages:m.NumMessages,
+					NumUniqUsers:m.NumUniqUsers,
+					Sentiment:m.Sentiment,
+					AvgResponseTime:parseInt((parseFloat(m.AvgResponseTime / 60))*100)/100,
+					Week:m.Week
+				});
 			}
 
 			callback(MOCK_TODAY);
@@ -5118,7 +5125,16 @@ module.exports = {
 				
 				if(m.Date.getFullYear() == '2018' && m.Date.getMonth() == '0')
 				{
-					MOCK_THIS_MONTH.push(m);		
+					MOCK_THIS_MONTH.push({
+						Date:m.Date,
+						BotChannel:m.BotChannel,
+						Category:m.Category,
+						NumMessages:m.NumMessages,
+						NumUniqUsers:m.NumUniqUsers,
+						Sentiment:m.Sentiment,
+						AvgResponseTime:parseInt((parseFloat(m.AvgResponseTime / 60))*100)/100,
+						Week:m.Week
+					});		
 				}
 			}
 
@@ -5132,8 +5148,17 @@ module.exports = {
 			{
 				var m = DATA[i];
 				if(m.Date >= query.time.start && m.Date <= query.time.end)
-				{
-					RESULTS.push(m);		
+				{	
+					RESULTS.push({
+						Date:m.Date,
+						BotChannel:m.BotChannel,
+						Category:m.Category,
+						NumMessages:m.NumMessages,
+						NumUniqUsers:m.NumUniqUsers,
+						Sentiment:m.Sentiment,
+						AvgResponseTime:parseInt((parseFloat(m.AvgResponseTime / 60))*100)/100,
+						Week:m.Week
+					});		
 				}
 			}
 
